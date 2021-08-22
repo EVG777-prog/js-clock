@@ -212,16 +212,20 @@ body {
     margin-top: 50px;
     border: 5px solid rgb(61, 42, 165);
     border-width: 100%;
-    /* width: 100%; */
-    height: 50px;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-#cdt {
+.cdt {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 36px;
     text-align: center;
     margin-block-start: 5px;
     color: coral;
+    margin: 0 10px;
 }
 
 .container .wc {
@@ -239,6 +243,16 @@ body {
     position: absolute;
     left: 15%;
     top: 35px;
+    text-align: center;
+}
+
+.city-name-primary {
+    font-size: 42px;
+    font-weight: bold;
+    color: coral;
+    position: absolute;
+    left: 15%;
+    top: 55px;
     text-align: center;
 }
 

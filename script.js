@@ -1,7 +1,9 @@
 const handHours = document.querySelector('.hh'),
     handMinutes = document.querySelector('.mh'),
     handSeconds = document.querySelector('.sh'),
-    clockDigitalTable = document.querySelector('#cdt'),
+    clockDigitalTime = document.querySelector('#digit-time'),
+    clockDigitalDay = document.querySelector('#digit-day'),
+    clockDigitalDate = document.querySelector('#digit-date'),
     buttonCountCitiesUp = document.querySelector('#count-cities-up'),
     buttonCountCitiesDown = document.querySelector('#count-cities-down'),
     containerClocks = document.querySelector('#container-wc'),
@@ -10,6 +12,7 @@ const handHours = document.querySelector('.hh'),
     buttonSetCity = document.querySelector('#set-city');
 
 const dayOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 let interval;
 
@@ -82,6 +85,7 @@ function createListCities() {
     }
 }
 
+// функция показа часов
 function showClocks() {
     let clocks = document.querySelectorAll('.clock-face-small');
 
@@ -119,7 +123,9 @@ function startClocks() {
         handMinutes.style.transform = `rotate(${90 + mn / 60 * 360 + (1 / 60 * sc / 60 * 360)}deg)`;
         handSeconds.style.transform = `rotate(${90 + sc / 60 * 360}deg)`;
 
-        clockDigitalTable.textContent = `${hr}:${mn}:${sc} ${dayOfWeek[date.getDay()]} ${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`;
+        clockDigitalTime.textContent = `${hr}:${mn}:${sc}`;
+        clockDigitalDay.textContent = `${dayOfWeek[date.getDay()]}`;
+        clockDigitalDate.textContent = `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
 
         for (let i = 0; i < cityClocks.length; i++) {
             hr = -3 + timeZones[cityClocks[i]];
@@ -134,3 +140,12 @@ function startClocks() {
 
 createListCities();
 showClocks();
+
+console.log(`
+Score: 30 / 30
+  - [x] механические часы с движущимися стрелками
+  - [x] электронными часы с точным временем(часы, минуты и секунды), 
+        полное название дня недели, дата (число, название месяца, год)
+  - [x] приложение, которое показывает время в разных точках планеты
+        возможно убирать/добавлять произвольное количество циферблатов и настройка каждого
+  `);
