@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS30 Clock</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="container">
+            <div class="clock-digital">
+                <p id="cdt">00:00:00</p>
+            </div>
+            <div class="container setting">
+                <div class="count-cities">
+                    <button id="count-cities-up" class="btn-count">+</button>
+                    <p class="count-cities-text">4</p>
+                    <button id="count-cities-down" class="btn-count">-</button>
+                </div>
+                <div class="number-city">
+                    <select id="number-city" class="sel-city" size="1">
+                        <option selected disabled>Select watch number</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                <div class="select-city">
+                    <select id="select-city" class="sel-city" size="1">
+                        <option selected disabled>Select city</option>
+                        <option value="Detroit (US)">Detroit (US)</option>
+                        <option value="Chicago (US)">Chicago (US)</option>
+                        <option value="Washington (US)">Washington (US)</option>
+                        <option value="Sydney (Canada)">Sydney (Canada)</option>
+                    </select>
+                </div>
+                <button id="set-city" class="sel-city">Set city</button>
+
+            </div>
+        </div>
+        <div class="container" style="flex-direction: row;">
+            <div class="container clock">
+                <div class="clock-face">
+                    <div class="hh"></div>
+                    <div class="mh"></div>
+                    <div class="sh"></div>
+                </div>
+            </div>
+
+            <div id="container-wc" class="container wc">
+                <div id="clock-1" class="clock-face-small">
+                    <p class="city-name">City 1</p>
+                    <div class="hh-small"></div>
+                    <div class="mh-small"></div>
+                    <div class="sh-small"></div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
